@@ -1,0 +1,9 @@
+[package]
+name = "phase-autodiff"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+phase-core = { path = "../phase-core" }
+num-complex = "0.4"
+ndarray = "0.15"

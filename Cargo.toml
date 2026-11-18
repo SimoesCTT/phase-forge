@@ -1,0 +1,10 @@
+[workspace]
+members = [
+    "phase-core",
+    "phase-autodiff",
+    "phase-layers",
+    "phase-infer",
+    "phase-bridge",
+    "phase-train",
+]
+resolver = "2"

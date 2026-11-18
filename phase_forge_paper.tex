@@ -1,0 +1,144 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\geometry{margin=1in}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  backgroundcolor=\color{gray!5},
+  keywordstyle=\color{blue},
+  commentstyle=\color{green!60!black}
+}
+
+\title{\textbf{Phase-Forge: A 100\% Pure-Rust, Zero-FFI Phase-Domain Machine Learning and Real-Time Telemetry Analytics Ecosystem (Comprehensive Technical Monograph)}}
+\author{A. Sim\~{o}es \\ \texttt{SimoesCTT / OLYSSIPO}}
+\date{November 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Traditional neural networks operate exclusively within real-valued vector spaces $\mathbb{R}^n$, treating time-series telemetry, high-frequency signals, and quantum circuit compilation metrics as static magnitudes while discarding essential phase relationships. In oscillatory physics, harmonic analysis, and systems engineering, this discards critical temporal and structural degrees of freedom. We introduce \textbf{Phase-Forge}, a 100\% pure-Rust, zero-FFI ecosystem designed for phase-domain machine learning and real-time streaming telemetry analytics. Phase-Forge models signals as complex-valued trajectories on Riemannian manifolds ($z = r e^{i\theta}$). This paper details the foundational mathematics of polar complex tensors, non-analytic Wirtinger backpropagation across complex gradient fields, phase-preserving ModReLU activations, sliding-window Phase Locking Value (PLV) anomaly detection, and end-to-end Fedora Linux RPM packaging via Copr.
+\end{abstract}
+
+\section{Introduction and Motivation}
+Real-valued neural networks dominate modern machine learning but suffer from fundamental geometric limitations when applied to oscillatory, wave-form, or phase-coupled data streams. Standard activation functions (such as ReLU) destroy phase angle information by clamping negative values or operating solely on scalar magnitudes. 
+
+Phase-Forge addresses this limitation by reformulating machine learning primitives in the complex domain $\mathbb{C}$. By preserving both amplitude ($r$) and phase ($\theta$), Phase-Forge enables neural networks to reason natively about harmonic resonance, quantum circuit compilation metrics, audio phase-space processing, and real-time system scheduler jitter. Furthermore, implemented entirely in Rust with zero foreign function interface (FFI) overhead, Phase-Forge provides deterministic memory safety, zero-cost abstractions, and high-performance execution suitable for edge telemetry nodes and kernel-adjacent bridges.
+
+\section{Riemannian Manifolds and Complex Polar Tensors}
+In Phase-Forge, every state vector element $z \in \mathbb{C}$ maintains its Cartesian and polar representations concurrently:
+\begin{equation}
+z = x + iy = r e^{i\theta}
+\end{equation}
+where $r = |z| = \sqrt{x^2 + y^2}$ represents the magnitude (e.g., CPU load or signal amplitude) and $\theta = \arg(z) = \operatorname{atan2}(y, x)$ represents the phase angle (e.g., scheduler jitter or temporal offset). 
+
+\begin{definition}[Phase Tensor Space]
+A Phase Tensor $\mathcal{Z}$ of rank $N$ is defined over a Riemannian complex manifold $\mathcal{M} \subset \mathbb{C}^N$ equipped with a Hermitian inner product $\langle u, v \rangle = u^\dagger v$.
+\end{definition}
+
+Linear transformations in the complex domain apply complex weight matrices $W = A + iB$ to input vectors $z$:
+\begin{equation}
+z_{\text{out}} = W z = (A + iB)(x + iy) = (Ax - By) + i(Ay + Bx)
+\end{equation}
+This operation geometrically rotates incoming phase trajectories rather than merely scaling amplitudes.
+
+\section{Non-Analytic Wirtinger Calculus and Autodiff}
+Because complex-valued cost functions are generally non-analytic (not holomorphic) with respect to complex variables, standard complex differentiation fails. Phase-Forge utilizes **Wirtinger calculus** via the \texttt{phase-autodiff} crate. 
+
+\begin{definition}[Wirtinger Derivatives]
+For a real-valued loss function $\mathcal{L}(z, \bar{z})$ of a complex variable $z = x + iy$, the formal derivative operators with respect to $z$ and its complex conjugate $\bar{z}$ are defined as:
+\begin{equation}
+\frac{\partial}{\partial z} = \frac{1}{2} \left( \frac{\partial}{\partial x} - i \frac{\partial}{\partial y} \right), \quad \frac{\partial}{\partial \bar{z}} = \frac{1}{2} \left( \frac{\partial}{\partial x} + i \frac{\partial}{\partial y} \right)
+\end{equation}
+\end{definition}
+
+Gradient descent parameter updates follow the conjugate gradient descent rule on complex manifolds:
+\begin{equation}
+z_{t+1} = z_t - \eta \frac{\partial \mathcal{L}}{\partial \bar{z}}
+\end{equation}
+
+\section{Phase-Preserving ModReLU Activations}
+Standard activation functions distort phase angles. Phase-Forge implements \textbf{ModReLU}, which scales the magnitude of a complex number while leaving its instantaneous phase angle $\theta$ invariant:
+\begin{equation}
+\sigma_{\text{mod}}(z) = \max\left(0, 1 + \frac{b}{|z|}\right) z = \begin{cases} 
+\left(1 + \frac{b}{|z|}\right) z & \text{if } |z| + b > 0 \\ 
+0 & \text{if } |z| + b \le 0 
+\end{cases}
+\end{equation}
+where $b \in \mathbb{R}$ is a learnable real-valued bias term. When $|z| + b \le 0$, the output collapses to zero; otherwise, the phase $\theta$ is perfectly preserved.
+
+\section{Streaming Phase Locking Value (PLV) Anomaly Detection}
+To detect sudden system turbulence or desynchronization in real time without lagging behind moving averages, Phase-Forge computes the sliding-window **Phase Locking Value (PLV)**:
+\begin{equation}
+\text{PLV} = \left| \frac{1}{N} \sum_{n=1}^{N} e^{i(\theta_{\text{pred}, n} - \theta_{\text{target}, n})} \right|
+\end{equation}
+A PLV approaching $1.0$ indicates strong phase coherence and system stability, whereas a drop toward $0.0$ flags immediate structural anomalies or scheduler stutters.
+
+\section{Ecosystem Crate Architecture}
+The Phase-Forge workspace is organized into six highly decoupled, zero-FFI Rust crates:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llp{7.5cm}}
+\toprule
+\textbf{Crate Name} & \textbf{Type} & \textbf{Core Responsibility} \\
+\midrule
+\texttt{phase-core} & Library & Complex tensor primitives, polar/Cartesian dual-representation. \\
+\texttt{phase-autodiff} & Library & Wirtinger calculus graph and conjugate gradient updates. \\
+\texttt{phase-layers} & Library & ModReLU activation functions and complex linear rotation weights. \\
+\texttt{phase-infer} & Library & Real-time sliding-window PLV anomaly detection engine. \\
+\texttt{phase-bridge} & Binary & Stdin JSONL telemetry parser connecting \texttt{chronos-pulse} metrics. \\
+\texttt{phase-train} & Binary & Multi-epoch optimization training loop on historical logs. \\
+\bottomrule
+\end{tabular}
+\caption{Phase-Forge Workspace Crate Breakdown}
+\label{tab:crates}
+\end{table}
+
+\section{Real-Time Telemetry Pipeline and Implementation}
+The \texttt{phase-bridge} binary ingests streaming JSONL records from system telemetry producers such as \texttt{chronos-pulse}. Each incoming record containing CPU load and scheduler jitter is mapped into a complex phase tensor:
+\begin{equation}
+z_{\text{input}} = \text{CPU}_{\text{load}} \cdot e^{i (\text{Jitter}_{\text{ms}} \cdot 0.1)}
+\end{equation}
+
+Below is an excerpt illustrating the core complex forward pass and ModReLU application within the workspace:
+
+\begin{lstlisting}[language=Rust, caption={Complex Forward Pass and ModReLU in Phase-Forge}]
+use num_complex::Complex64;
+use ndarray::Array2;
+
+pub struct PhaseDense {
+    pub weights: Array2<Complex64>,
+    pub bias: Array2<Complex64>,
+}
+
+impl PhaseDense {
+    pub fn forward(&self, input: &Array2<Complex64>) -> Array2<Complex64> {
+        // Complex matrix multiplication rotating phase trajectories
+        input.dot(&self.weights) + &self.bias
+    }
+}
+\end{lstlisting}
+
+\section{Fedora Copr Distribution and RPM Packaging}
+To ensure seamless deployment across Fedora Linux workstations, Phase-Forge packages its binaries and library development subpackages (\texttt{rust-phase-core-devel}, \texttt{rust-phase-layers-devel}) into RPM spec files. These are compiled offline with vendored dependencies and distributed via the Copr repository \texttt{simoesctt/phase-forge}.
+
+\section{Conclusion}
+Phase-Forge establishes a robust, high-performance paradigm for phase-domain machine learning in pure Rust. By abandoning real-valued limitations and embracing Riemannian complex trajectories, Phase-Forge provides unprecedented analytical precision for telemetry anomaly detection and harmonic systems.
+
+\end{document}

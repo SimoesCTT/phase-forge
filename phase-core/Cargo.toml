@@ -1,0 +1,9 @@
+[package]
+name = "phase-core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+num-complex = "0.4"
+ndarray = "0.15"
+libm = "0.2"

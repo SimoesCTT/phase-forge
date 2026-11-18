@@ -1,0 +1,10 @@
+[package]
+name = "phase-infer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+phase-core = { path = "../phase-core" }
+phase-layers = { path = "../phase-layers" }
+num-complex = "0.4"
+ndarray = "0.15"
