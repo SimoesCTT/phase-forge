@@ -1,0 +1,34 @@
+/home/americosimoes/Desktop/phase-forge/target/debug/deps/serde_derive-86c5672e27484762.d: /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/lib.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/mod.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/ast.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/attr.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/name.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/case.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/check.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/ctxt.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/receiver.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/respan.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/symbol.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/bound.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/fragment.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/enum_.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/enum_adjacently.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/enum_externally.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/enum_internally.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/enum_untagged.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/identifier.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/struct_.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/tuple.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/unit.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/deprecated.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/dummy.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/pretend.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/ser.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/this.rs
+
+/home/americosimoes/Desktop/phase-forge/target/debug/deps/libserde_derive-86c5672e27484762.so: /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/lib.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/mod.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/ast.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/attr.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/name.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/case.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/check.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/ctxt.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/receiver.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/respan.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/symbol.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/bound.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/fragment.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/enum_.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/enum_adjacently.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/enum_externally.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/enum_internally.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/enum_untagged.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/identifier.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/struct_.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/tuple.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/unit.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/deprecated.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/dummy.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/pretend.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/ser.rs /home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/this.rs
+
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/lib.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/mod.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/ast.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/attr.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/name.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/case.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/check.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/ctxt.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/receiver.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/respan.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/internals/symbol.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/bound.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/fragment.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/enum_.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/enum_adjacently.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/enum_externally.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/enum_internally.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/enum_untagged.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/identifier.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/struct_.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/tuple.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/de/unit.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/deprecated.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/dummy.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/pretend.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/ser.rs:
+/home/americosimoes/Desktop/phase-forge/vendor/serde_derive/src/this.rs:
+
+# env-dep:CARGO_PKG_VERSION_PATCH=229

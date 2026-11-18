@@ -1,0 +1,1 @@
+/home/americosimoes/Desktop/phase-forge/target/debug/libphase_autodiff.rlib: /home/americosimoes/Desktop/phase-forge/phase-autodiff/src/lib.rs /home/americosimoes/Desktop/phase-forge/phase-core/src/lib.rs
